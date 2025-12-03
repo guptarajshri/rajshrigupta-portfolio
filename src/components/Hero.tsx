@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Github, Linkedin, Mail, Phone, Download } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import profilePic from "../assets/Profile_picture.jpg";
 
 const Hero = () => {
   return (
@@ -19,7 +20,7 @@ const Hero = () => {
           {/* Profile Photo */}
           <div className="mb-8 flex justify-center">
             <Avatar className="h-32 w-32 border-4 border-primary/20 animate-float">
-              <AvatarImage src="public\Profile_picture.jpg" alt="Rajshri Gupta" />
+            <AvatarImage src={profilePic} alt="Rajshri Gupta" />
               <AvatarFallback className="text-3xl bg-primary/10 text-primary">RG</AvatarFallback>
             </Avatar>
           </div>
