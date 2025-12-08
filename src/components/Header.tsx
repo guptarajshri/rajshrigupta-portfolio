@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,7 +17,6 @@ const Header = () => {
 
   const navLinks = [
     { label: "About", href: "#about" },
-    // { label: "Achievements", href: "#achievements" },
     { label: "Skills", href: "#skills" },
     { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
@@ -24,10 +24,14 @@ const Header = () => {
     { label: "Contact", href: "#contact" },
   ];
 
+  // Always use theme-aware foreground colors
+  const textColorClass = "text-foreground";
+  const hoverColorClass = "hover:text-primary";
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-card/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+        isScrolled ? "bg-card/95 backdrop-blur-md shadow-lg" : "bg-background/80 backdrop-blur-sm"
       }`}
     >
       <nav className="container mx-auto px-6 py-4">
@@ -37,16 +41,17 @@ const Header = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-foreground hover:text-primary transition-colors duration-200"
+                className={`${textColorClass} ${hoverColorClass} transition-colors duration-200`}
               >
                 {link.label}
               </a>
             ))}
+            <ThemeToggle />
             <Button variant="default" size="sm" asChild>
               <a href="#contact">Hire Me</a>
             </Button>
@@ -54,7 +59,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground"
+            className={`md:hidden ${textColorClass}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -64,7 +69,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4">
+          <div className="md:hidden mt-4 pb-4 space-y-4 bg-card/95 backdrop-blur-md rounded-lg p-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -75,6 +80,10 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
+            <div className="flex items-center gap-2 pt-2">
+              <span className="text-sm text-foreground">Theme:</span>
+              <ThemeToggle />
+            </div>
             <Button variant="default" size="sm" className="w-full" asChild>
               <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
                 Hire Me

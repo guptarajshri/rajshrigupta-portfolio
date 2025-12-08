@@ -40,7 +40,7 @@ const Experience = () => {
           <div className="w-20 h-1 bg-primary mx-auto"></div>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-8">
+        <div className="max-w-5xl mx-auto space-y-8">
           {experiences.map((exp, index) => (
             <Card
               key={index}

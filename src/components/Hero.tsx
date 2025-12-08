@@ -9,18 +9,37 @@ const Hero = () => {
     <section
       id="hero"
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
-      style={{
-        backgroundImage: `linear-gradient(rgba(45, 55, 72, 0.95), rgba(45, 55, 72, 0.65)), url(${heroBg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
     >
+      {/* Light mode background image with blur */}
+      <div
+        className="absolute inset-0 dark:hidden block"
+        style={{
+          backgroundImage: `url(${heroBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "blur(8px)",
+          transform: "scale(1.1)",
+        }}
+      />
+      <div
+        className="absolute inset-0 dark:hidden block bg-background/80"
+      />
+
+      {/* Dark mode background image overlay */}
+      <div
+        className="absolute inset-0 dark:block hidden"
+        style={{
+          backgroundImage: `linear-gradient(rgba(45, 55, 72, 0.95), rgba(45, 55, 72, 0.65)), url(${heroBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
       <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-slide-up">
           {/* Profile Photo */}
           <div className="mb-8 flex justify-center">
             <Avatar className="h-32 w-32 border-4 border-primary/20 animate-float">
-            <AvatarImage src={profilePic} alt="Rajshri Gupta" />
+              <AvatarImage src={profilePic} alt="Rajshri Gupta" />
               <AvatarFallback className="text-3xl bg-primary/10 text-primary">RG</AvatarFallback>
             </Avatar>
           </div>
@@ -31,7 +50,8 @@ const Hero = () => {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+          {/* Theme-aware text colors */}
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-foreground">
             Hi, I'm <span className="text-primary">Rajshri Gupta</span> 👋
           </h1>
 
@@ -39,7 +59,7 @@ const Hero = () => {
             Software Developer specializing in building scalable, cloud-native SaaS applications
           </p>
 
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground/80 mb-8 max-w-2xl mx-auto">
             2+ years of experience creating interactive dashboards, real-time data visualizations, 
             and responsive UI components with modern workflows.
           </p>

@@ -8,6 +8,7 @@ const Projects = () => {
     {
       title: "Real-Time Multi-Camera Face Detection Dashboard",
       period: "August 2025 - Present",
+      hostedUrl: "https://github.com/guptarajshri/face_detection/tree/face_detection_v1",
       githubUrl: "https://github.com/guptarajshri/face_detection/tree/face_detection_v1",
       description:
         "A comprehensive dashboard for managing RTSP cameras with real-time face detection capabilities, live streaming via WebRTC, and instant alert notifications.",
@@ -35,6 +36,7 @@ const Projects = () => {
     {
       title: "IntelliAcademy – EdTech Platform",
       period: "January 2023 - June 2023",
+      hostedUrl: "",
       githubUrl: "",
       description:
         "A full-stack MERN application designed to enhance online learning with tailored dashboards for instructors and students, payment integration, and engagement analytics.",
@@ -54,6 +56,31 @@ const Projects = () => {
         "Cloudinary",
         "JWT",
         "Bcrypt",
+      ],
+    },
+    {
+      title: "PortFolio – Rajshri Gupta",
+      period: "October 2025 - October 2025",
+      hostedUrl: "http://rajshrigupta-portfolio.s3-website.ap-south-1.amazonaws.com/",
+      githubUrl: "https://github.com/guptarajshri/rajshrigupta-portfolio",
+      description:
+        "I recently developed and deployed my personal software developer portfolio, designed to present my professional experience, technical skills, and project work in a clean, structured, and modern format. This portfolio was built with a focus on performance, scalability, and high-quality UI/UX engineering.",
+      highlights: [
+        "Developed my portfolio using a modern, production-ready technology stack focused on performance, scalability, and automation",
+        "The project is containerized using 𝗗𝗼𝗰𝗸𝗲𝗿 to create a consistent build and runtime environment",
+        "integrated with 𝗝𝗲𝗻𝗸𝗶𝗻𝘀 𝘁𝗼 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗲 the 𝗖𝗜/𝗖𝗗 pipeline for building and deploying updates",
+      ],
+      technologies: [
+        "React.js",
+        "TypeScript",
+        "Jenkins",
+        "Docker",
+        "AWS",
+        "S3",
+        "CI/CD",
+        "Github",
+        "Vite",
+        "Tailwind"
       ],
     },
   ];
@@ -95,7 +122,7 @@ const Projects = () => {
                   <div className="flex items-center gap-3 mb-1">
                     {/* Title with hover underline + primary color */}
                     <a
-                      href={project.githubUrl}
+                      href={project.hostedUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="

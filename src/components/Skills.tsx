@@ -7,12 +7,14 @@ const Skills = () => {
       category: "Frontend",
       skills: [
         "Angular",
+        "React.js",
         "TypeScript",
         "JavaScript",
-        "React.js",
         "RxJS",
         "NgRx",
+        "Redux",
         "Angular Material",
+        "Tailwind",
         "Bootstrap",
         "HTML5",
         "CSS3",
@@ -25,10 +27,13 @@ const Skills = () => {
         "SpringBoot",
         "Node.js",
         "Express.js",
+        "Python",
+        "Django",
         "RESTful APIs",
         "GraphQL",
         "MongoDB",
         "PostgreSQL",
+        "MySQL",
         "Prisma",
       ],
     },
@@ -59,6 +64,7 @@ const Skills = () => {
     {
       category: "AI & Modern Tools",
       skills: [
+        "GenAI",
         "Cursor",
         "GitHub Copilot",
         "ChatGPT",
@@ -76,6 +82,7 @@ const Skills = () => {
         "Agile/SCRUM",
         "Client Communication",
         "Time Management",
+        "Technical leadership"
       ],
     },
   ];
